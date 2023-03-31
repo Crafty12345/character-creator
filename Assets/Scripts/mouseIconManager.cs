@@ -9,7 +9,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class mouseIconManager : MonoBehaviour
 {
-
+    
     public Texture2D handIcon;
     public Texture2D pointerIcon;
 
