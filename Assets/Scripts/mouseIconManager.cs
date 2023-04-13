@@ -12,6 +12,7 @@ public class mouseIconManager : MonoBehaviour
     
     public Texture2D handIcon;
     public Texture2D pointerIcon;
+    public Texture2D iBeamIcon;
 
     public void setToHand()
     {
@@ -21,6 +22,11 @@ public class mouseIconManager : MonoBehaviour
     public void setToPointer()
     {
         Cursor.SetCursor(pointerIcon, new Vector2(8, 0), CursorMode.Auto);
+    }
+
+    public void setToiBeam()
+    {
+        Cursor.SetCursor(iBeamIcon, new Vector2(8, 0), CursorMode.Auto);
     }
 
 }
