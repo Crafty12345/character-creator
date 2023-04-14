@@ -16,7 +16,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Avatar creation failed:\n\tTransform 'Armature.002' not found
+      in HumanDescription.\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -224,25 +225,28 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
+    - boneName: Chest
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
     skeleton:
     - name: body_shape_1.2(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Waist.003
+    - name: Armature.002
       parentName: body_shape_1.2(Clone)
-      position: {x: -0, y: 0.0011959523, z: 0.002697885}
+      position: {x: -0, y: -0.510412, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 251.944, y: 251.944, z: 251.94394}
-    - name: Armature.001
-      parentName: body_shape_1.2(Clone)
-      position: {x: -0, y: -0.102082394, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 84.1617, y: 84.1617, z: 64.84996}
+      scale: {x: 420.8085, y: 420.8085, z: 324.24982}
     - name: Hips
-      parentName: Armature.001
-      position: {x: 0, y: -0.00013198948, z: 0.011944512}
+      parentName: Armature.002
+      position: {x: 0, y: -0.00013198875, z: 0.011944511}
       rotation: {x: -0.00000008429373, y: -0.7071069, z: -0.70710677, w: -0.00000008429372}
       scale: {x: 1, y: 1, z: 1}
     - name: LowerSpine
@@ -253,48 +257,48 @@ ModelImporter:
     - name: Chest
       parentName: LowerSpine
       position: {x: -1.3996478e-19, y: 0.0015461493, z: -5.870548e-13}
-      rotation: {x: 0.0000000060234973, y: 3.4297182e-31, z: -1.4361137e-15, w: 1}
+      rotation: {x: 0.000000007674083, y: 4.530658e-31, z: -1.8296439e-15, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Neck
       parentName: Chest
-      position: {x: 1.3996478e-19, y: 0.0015461493, z: 5.870548e-13}
-      rotation: {x: -0.0000000030117486, y: 8.5742956e-32, z: 7.1805683e-16, w: 1}
+      position: {x: 1.0068257e-18, y: 0.0009987729, z: 4.222933e-12}
+      rotation: {x: -0.000000004662334, y: -1.1255749e-31, z: 1.1115871e-15, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Head
       parentName: Neck
-      position: {x: -0, y: 0.00069594383, z: 0}
-      rotation: {x: 0, y: 0.00000011920929, z: -0, w: 1}
+      position: {x: -0, y: 0.0012433201, z: 0}
+      rotation: {x: -0.033425868, y: -1.2631067e-17, z: 0.000000007969348, w: 0.9994412}
       scale: {x: 1, y: 1, z: 1}
     - name: Head_end
       parentName: Head
-      position: {x: -0, y: 0.0014488822, z: 0}
+      position: {x: -0, y: 0.0010840482, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ShoulderConnector.L
       parentName: Chest
-      position: {x: 1.3996478e-19, y: 0.0015461493, z: 5.870548e-13}
-      rotation: {x: -0.002545137, y: 0.000671747, z: 0.95238197, w: -0.30489618}
-      scale: {x: 0.99999845, y: 0.9999999, z: 1}
+      position: {x: 1.0068257e-18, y: 0.0009987729, z: 4.222933e-12}
+      rotation: {x: -0.00000014751537, y: -0.00000016098006, z: 0.9117676, w: -0.41070652}
+      scale: {x: 0.9999999, y: 1, z: 1}
     - name: Shoulder.L
       parentName: ShoulderConnector.L
-      position: {x: -1.7379816e-10, y: 0.0012642787, z: 3.3126746e-12}
-      rotation: {x: -0.015285478, y: -0.008900282, z: 0.5031078, w: 0.86404264}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+      position: {x: 7.428005e-11, y: 0.0008332546, z: -1.15067955e-11}
+      rotation: {x: -0.016540451, y: -0.006266951, z: 0.3542482, w: 0.93498415}
+      scale: {x: 1, y: 0.9999998, z: 1}
     - name: UpperArm.L
       parentName: Shoulder.L
-      position: {x: -1.2152165e-10, y: 0.001219736, z: -3.7255177e-12}
-      rotation: {x: 0.00898894, y: 0.00000023797433, z: 0.0000002688115, w: 0.9999596}
+      position: {x: 5.5354943e-11, y: 0.0012197343, z: -6.2885873e-12}
+      rotation: {x: 0.008988951, y: 0.00000023751078, z: 0.00000022071404, w: 0.9999596}
       scale: {x: 1, y: 1, z: 1}
     - name: LowerArm.L
       parentName: UpperArm.L
-      position: {x: 2.0626548e-10, y: 0.0024796738, z: 3.8025403e-12}
-      rotation: {x: -0.0005099831, y: 0.0000000057648215, z: 0.00000012684129, w: 0.9999999}
+      position: {x: 2.0626569e-10, y: 0.0024796706, z: -1.3501733e-11}
+      rotation: {x: -0.0005099822, y: 0.0000000057648357, z: 0.00000012684141, w: 0.9999999}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: Hand.L
       parentName: LowerArm.L
-      position: {x: 1.0886933e-10, y: 0.002342375, z: 1.1161205e-12}
-      rotation: {x: -0.009550726, y: -0.0000000044844715, z: -0.00000013452862, w: 0.9999544}
-      scale: {x: 1, y: 1.0000001, z: 1}
+      position: {x: 1.0886889e-10, y: 0.0023423715, z: -6.940297e-12}
+      rotation: {x: -0.009550738, y: -0.000000004484516, z: -0.00000013452873, w: 0.9999544}
+      scale: {x: 1, y: 1, z: 1}
     - name: Hand.L_end
       parentName: Hand.L
       position: {x: -0, y: 0.0011500799, z: 0}
@@ -302,29 +306,29 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: ShoulderConnector.R
       parentName: Chest
-      position: {x: 1.3996478e-19, y: 0.0015461493, z: 5.870548e-13}
-      rotation: {x: 0.0025453789, y: 0.0006719555, z: 0.95238197, w: 0.30489615}
-      scale: {x: 0.99999845, y: 0.9999999, z: 1}
+      position: {x: 1.0068257e-18, y: 0.0009987729, z: 4.222933e-12}
+      rotation: {x: 0.00000036489777, y: -0.00000006306, z: 0.9117676, w: 0.41070652}
+      scale: {x: 0.9999999, y: 1, z: 1}
     - name: Shoulder.R
       parentName: ShoulderConnector.R
-      position: {x: 1.7379818e-10, y: 0.0012642787, z: 3.3078252e-12}
-      rotation: {x: -0.015285478, y: 0.008900282, z: -0.5031078, w: 0.86404264}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+      position: {x: -7.428005e-11, y: 0.0008332546, z: -1.1507275e-11}
+      rotation: {x: -0.016540451, y: 0.006266951, z: -0.3542482, w: 0.93498415}
+      scale: {x: 1, y: 0.9999998, z: 1}
     - name: UpperArm.R
       parentName: Shoulder.R
-      position: {x: 1.2152168e-10, y: 0.001219736, z: -3.7296386e-12}
-      rotation: {x: 0.00898894, y: -0.00000023797413, z: -0.00000026881148, w: 0.9999596}
+      position: {x: -5.5354873e-11, y: 0.0012197343, z: -6.2890136e-12}
+      rotation: {x: 0.008988951, y: -0.00000023751082, z: -0.00000022071407, w: 0.9999596}
       scale: {x: 1, y: 1, z: 1}
     - name: LowerArm.R
       parentName: UpperArm.R
-      position: {x: -2.0626545e-10, y: 0.0024796738, z: 3.800551e-12}
-      rotation: {x: -0.0005099831, y: -0.0000000057648215, z: -0.0000001268413, w: 0.9999999}
+      position: {x: -2.0626569e-10, y: 0.0024796706, z: -1.3502301e-11}
+      rotation: {x: -0.0005099822, y: -0.0000000057648357, z: -0.0000001268414, w: 0.9999999}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: Hand.R
       parentName: LowerArm.R
-      position: {x: -1.0886933e-10, y: 0.002342375, z: 1.114131e-12}
-      rotation: {x: -0.012214075, y: 0.00000000414551, z: 0.00000013656152, w: 0.99992543}
-      scale: {x: 1, y: 1.0000001, z: 1}
+      position: {x: -1.0886889e-10, y: 0.0023423715, z: -6.94115e-12}
+      rotation: {x: -0.012214085, y: 0.000000004145511, z: 0.00000013656161, w: 0.99992543}
+      scale: {x: 1, y: 1, z: 1}
     - name: Hand.R_end
       parentName: Hand.R
       position: {x: -0, y: 0.0010071694, z: 0}
@@ -370,6 +374,11 @@ ModelImporter:
       position: {x: -0, y: 0.001161287, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
+    - name: head.001
+      parentName: body_shape_1.2(Clone)
+      position: {x: -0.000000009313229, y: 2.0126338, z: -0.105541945}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 188.66957, y: 188.66957, z: 188.70311}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
