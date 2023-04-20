@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6932771c6ab75944ad4191fadb2107a, type: 3}
+  m_Name: hair
+  m_EditorClassIdentifier: 
+  IconObjectPairList:
+  - icon: {fileID: 21300000, guid: 2e1f8ef0e833f80458270f2f9220c387, type: 3}
+    GObject: {fileID: 8515846153745883400, guid: fc27c8c29bd3fb04b8e645cca436b34f, type: 3}
+  - icon: {fileID: 21300000, guid: ac5964a3d7c6a5147beb5b2d7fc4e880, type: 3}
+    GObject: {fileID: 258120457159956195, guid: 55c82908aab583e44824f8130d573dcb, type: 3}
+  - icon: {fileID: 21300000, guid: 2e536c7f48472054fbd4b2484e2bbe06, type: 3}
+    GObject: {fileID: 4367487564190239755, guid: 82690ff3249970e45b0c48e7cb9d39d4, type: 3}
+  - icon: {fileID: 21300000, guid: 25a6c20238d40104280e0fba52015349, type: 3}
+    GObject: {fileID: 5008392483521484956, guid: d3bad172bfac1f3439ec962d35405d93, type: 3}
+  - icon: {fileID: 21300000, guid: ff7440f6ccb108e4eab55fcda44868ef, type: 3}
+    GObject: {fileID: 6653404344611561523, guid: 9a83b19b5ea3fab4fbb7a761b43e7fbf, type: 3}
