@@ -37,7 +37,7 @@ public class showBasicColourSelector : MonoBehaviour
         }
         public DecColour Floor(int n)
         {
-            decimal _r = Math.Floor((this.r * (decimal)Math.Pow(10, n))) / (decimal)Math.Pow(10,n);
+            decimal _r = Math.Floor((this.r * (decimal)Math.Pow(10, n))) / (decimal)Math.Pow(10, n);
             decimal _g = Math.Floor((this.g * (decimal)Math.Pow(10, n))) / (decimal)Math.Pow(10, n);
             decimal _b = Math.Floor((this.b * (decimal)Math.Pow(10, n))) / (decimal)Math.Pow(10, n);
             decimal _a = Math.Floor((this.a * (decimal)Math.Pow(10, n))) / (decimal)Math.Pow(10, n);
@@ -45,7 +45,7 @@ public class showBasicColourSelector : MonoBehaviour
         }
     }
 
-    private bool checkColourSimilarity(Color colour1, Color colour2, float threshold)
+    public static bool checkColourSimilarity(Color colour1, Color colour2, float threshold)
     {
         float min_r = colour1.r * (1 - threshold);
         float max_r = colour1.r * (1 + threshold);
@@ -73,21 +73,42 @@ public class showBasicColourSelector : MonoBehaviour
     public Transform canvas;
     public Material current_colour_material;
 
+    public Color getAverageColour(List<Color> colours, float brightness)
+    {
+        List<float> red = new List<float>();
+        List<float> blue = new List<float>();
+        List<float> green = new List<float>();
+
+        foreach (Color colour in colours)
+        {
+            red.Add(colour.r);
+            blue.Add(colour.g);
+            green.Add(colour.b);
+        }
+        float average_red = red.Average() * brightness;
+        float average_blue = blue.Average() * brightness;
+        float average_green = green.Average() * brightness;
+
+        return new Color(average_red, average_blue, average_green);
+    }
+
+
     public void showPanel()
     {
 
-        Debug.Log(current_colour_material.color);
+
         Sprite box_selected = Resources.Load<Sprite>("UI/textures/misc/empty_box/selected/selected");
         GameObject sender = this.gameObject;
         GameObject window_panel = Instantiate(window, canvas);
+        window_panel.GetComponent<Image>().color = getAverageColour(colourGroup.Colours,1.25f);
         RectTransform window_panel_rect = window_panel.GetComponent<RectTransform>();
         float window_width = window_panel_rect.sizeDelta.x;
         float window_height = window_panel_rect.sizeDelta.y;
 
         float padding_x = 5.0f;
         float padding_y = 5.0f;
-        float offset_x = 40.0f;
-        float offset_y = 80;
+        float offset_x = 30.0f;
+        float offset_y = 90;
         float box_size = box.GetComponent<RectTransform>().sizeDelta.x;
         float box_total_width = (box_size + padding_x);
         float box_total_height = (box_size + padding_y);
@@ -103,10 +124,10 @@ public class showBasicColourSelector : MonoBehaviour
             for (int c = 0; c < rows[r]; c++)
             {
 
-                int i = (c + ((r) * max_cols))+1;
+                int i = (c + ((r) * max_cols)) + 1;
 
                 GameObject new_box = Instantiate(box, window_panel.transform);
-
+                new_box.tag = "SkinColourButton";
 
                 Vector2 window_panel_position = window_panel_rect.anchoredPosition;
                 Vector2 new_box_pos = new Vector2(((window_panel_position.x + offset_x) + (c * (box_total_width))), ((window_height / 2) - (offset_y + ((padding_y + box_total_height) * r))));
