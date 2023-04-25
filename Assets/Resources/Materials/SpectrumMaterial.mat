@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpectrumMaterial2
+  m_Name: SpectrumMaterial
   m_Shader: {fileID: 4800000, guid: 0b1871eee844ea542aa7d8dc932d06d6, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
