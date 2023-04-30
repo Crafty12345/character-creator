@@ -14,22 +14,30 @@ public class Startup : MonoBehaviour
 
     void Awake()
     {
+        string streaming_assets_path = Application.streamingAssetsPath;
+        string character_data_path = streaming_assets_path + "/CharacterData";
+        if (!Directory.Exists(character_data_path)){
+            Directory.CreateDirectory(character_data_path);
+        }
+        character_data_path += "/";
         TimeSpan t = DateTime.Now - new DateTime(1970, 1, 1);
         string dirName = Convert.ToString((int)t.TotalSeconds);
-        string new_dir_path = "Assets/CharacterData/" + dirName;
-        AssetDatabase.CreateFolder("Assets/CharacterData", dirName);
-        var player_materials_dir = Directory.CreateDirectory(new_dir_path+"/Materials");
-        string[] default_materials = Directory.GetFiles("Assets/Resources/Materials/default/ScriptableObjects","*.asset");
+        string new_dir_path = character_data_path + dirName;
+        Directory.CreateDirectory(new_dir_path);
+        string player_materials_dir = Directory.CreateDirectory(new_dir_path+"/Materials").ToString();
+        UnityEngine.Object[] default_materials_temp = Resources.LoadAll("Materials/default/ScriptableObjects", typeof(materialJSONData));
+        materialJSONData[] default_materials = new materialJSONData[default_materials_temp.Length];
+        for (int i = 0; i < default_materials_temp.Length; i++)
+        {
+            default_materials[i] = (materialJSONData)default_materials_temp[i];
+        }
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        foreach (string material in default_materials)
+        foreach (materialJSONData material in default_materials)
         {
-            string new_materials_dir = $"Assets/CharacterData/{dirName}/materials";
-            string material_path_relative = Path.Combine("Materials/default/ScriptableObjects", Path.GetFileNameWithoutExtension(material));
-            new_materials_dir += "/" + ((Path.GetFileName(material_path_relative))).Replace("default_","") + ".json";
-            materialJSONData materialJSON = Resources.Load<materialJSONData>(material_path_relative);
-            FileManager.WriteBinary(materialJSON.toJson(),new_materials_dir);
+            string new_materials_path = player_materials_dir + "/" +  material.name.Replace("default_", "") + ".json";
+            FileManager.WriteBinary(material.toJson(),new_materials_path);
 
         }
         AssetDatabase.Refresh();

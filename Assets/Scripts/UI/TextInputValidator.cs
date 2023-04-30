@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class TextInputValidator : MonoBehaviour
@@ -11,13 +12,13 @@ public class TextInputValidator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InputField text_box = gameObject.GetComponent<InputField>();
+        TMP_InputField text_box = gameObject.GetComponent<TMP_InputField>();
         text_box.characterLimit = charLimit;
     }
 
     public void ValidateInput()
     {
-        char[] stringChars = gameObject.GetComponent<InputField>().text.ToCharArray();
+        char[] stringChars = gameObject.GetComponent<TMP_InputField>().text.ToCharArray();
         List<char> valid_chars = new List<char>();
         foreach (char c in stringChars)
         {
@@ -26,7 +27,7 @@ public class TextInputValidator : MonoBehaviour
                 valid_chars.Add(c);
             }
         }
-        gameObject.GetComponent<InputField>().text = new string(valid_chars.ToArray());
+        gameObject.GetComponent<TMP_InputField>().text = new string(valid_chars.ToArray());
 
     }
 

@@ -68,7 +68,6 @@ public class showBasicColourSelector : MonoBehaviour
 
 
     public colourGroupScriptableObjectManager colourGroup;
-    public GameObject window;
     public GameObject box;
     public Transform canvas;
     public Material current_colour_material;
@@ -96,7 +95,7 @@ public class showBasicColourSelector : MonoBehaviour
     public void showPanel()
     {
 
-
+        GameObject window = Resources.Load<GameObject>("Prefabs/UI/screens/empty_colour_select_window");
         Sprite box_selected = Resources.Load<Sprite>("UI/textures/misc/empty_box/selected/selected");
         GameObject sender = this.gameObject;
         GameObject window_panel = Instantiate(window, canvas);
