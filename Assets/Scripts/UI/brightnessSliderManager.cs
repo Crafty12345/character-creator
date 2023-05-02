@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class brightnessSliderManager : MonoBehaviour
 {
     public GameObject sliderIcon;
+    public GameObject preview;
     public float scale_factor;
     public float lerp_time;
 
@@ -40,7 +41,12 @@ public class brightnessSliderManager : MonoBehaviour
     }
 
     public void onValueChanged()
-    {   
+    {
+        Slider slider = this.gameObject.GetComponent<Slider>();
+
+        preview.GetComponent<ColourPreviewManager>().brightness = slider.value;
+        preview.GetComponent<ColourPreviewManager>().update_preview();
+
         Color default_colour_pressed = new Color(0.3806f, 0.5020f, 0.5566f, 0.9372f);
         Color min_pressed_colour = new Color(0, 0, 0);
         Color max_pressed_colour = new Color(1, 1, 1);
@@ -48,8 +54,7 @@ public class brightnessSliderManager : MonoBehaviour
         Color default_colour_normal = new Color(0.3906f, 0.512f, 0.5666f, 0.9372f);
         Color min_normal_colour = new Color(0.1f, 0.1f, 0.1f);
         Color max_normal_colour = new Color(1, 1,1);
-
-        Slider slider = this.gameObject.GetComponent<Slider>();
+        
         float new_value = slider.value;
         Color new_slider_pressed_colour = calculateBrightness(default_colour_pressed, new_value,min_pressed_colour,max_pressed_colour);
         Color new_slider_normal_colour = calculateBrightness(new Color(default_colour_normal.r,default_colour_normal.g,default_colour_normal.b), new_value, min_normal_colour, max_normal_colour);

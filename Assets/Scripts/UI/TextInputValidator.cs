@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using TMPro.EditorUtilities;
 
 public class TextInputValidator : MonoBehaviour
 {
@@ -27,7 +27,10 @@ public class TextInputValidator : MonoBehaviour
                 valid_chars.Add(c);
             }
         }
-        gameObject.GetComponent<TMP_InputField>().text = new string(valid_chars.ToArray());
+
+        char[] valid_chars_ar = valid_chars.ToArray();
+        string valid_chars_str = new string(valid_chars_ar);
+        gameObject.GetComponent<TMP_InputField>().text = valid_chars_str;
 
     }
 
