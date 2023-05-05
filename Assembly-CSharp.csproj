@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\TextInputValidator.cs" />
+    <Compile Include="Assets\Scripts\UI\HexadecimalColourManager.cs" />
     <Compile Include="Assets\Scripts\scriptableObjects\CharacterData.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />
     <Compile Include="Assets\Scripts\ColourPreviewManager.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Assets\Scripts\UI\AdvancedColourPicker.cs" />
     <Compile Include="Assets\Scripts\UI\mouseIconManager.cs" />
     <Compile Include="Assets\Scripts\Startup.cs" />
+    <Compile Include="Assets\Scripts\UI\colourSpectrumMarker.cs" />
     <Compile Include="Assets\Scripts\UI\boxIconManager.cs" />
     <Compile Include="Assets\Scripts\CharacterStateManager.cs" />
     <Compile Include="Assets\Scripts\UI\showAdvancedColourSelect.cs" />
@@ -78,8 +80,6 @@
     <Compile Include="Assets\Scripts\scriptableObjects\materialJSONData.cs" />
     <Compile Include="Assets\Scripts\scriptableObjects\colourScriptableObjectManager.cs" />
     <Compile Include="Assets\Scripts\FileManager.cs" />
-    <Compile Include="Assets\Scripts\UI\colourSpectrumMarker.cs" />
-    <Compile Include="Assets\Scripts\UI\HexadecimalColourManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
