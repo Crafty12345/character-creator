@@ -10,18 +10,37 @@ using UnityEngine.UI;
 public class mouseIconManager : MonoBehaviour
 {
     
-    public Texture2D handIcon;
-    public Texture2D pointerIcon;
-    public Texture2D iBeamIcon;
+    Texture2D handIcon;
+    Texture2D pointerIcon;
+    Texture2D iBeamIcon;
+
+    private void Awake()
+    {
+        handIcon = Resources.Load<Texture2D>("UI/textures/cursors/_aero_link");
+        pointerIcon = Resources.Load<Texture2D>("UI/textures/cursors/_aero_arrow");
+        iBeamIcon = Resources.Load<Texture2D>("UI/textures/cursors/_aero_iBeam");
+
+    }
 
     public void setToHand()
     {
-        Cursor.SetCursor(handIcon,new Vector2(8,0),CursorMode.Auto);
+        if(gameObject.GetComponent<Button>() != null) {
+            if (gameObject.GetComponent<Button>().interactable == true){
+                Cursor.SetCursor(handIcon, new Vector2(8, 0), CursorMode.Auto);
+            }
+        }
     }
 
     public void setToPointer()
     {
-        Cursor.SetCursor(pointerIcon, new Vector2(8, 0), CursorMode.Auto);
+        if (gameObject.GetComponent<Button>() != null)
+        {
+            if (gameObject.GetComponent<Button>().interactable == true)
+            {
+                Cursor.SetCursor(pointerIcon, new Vector2(8, 0), CursorMode.Auto);
+            }
+
+        }
     }
 
     public void setToiBeam()

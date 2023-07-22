@@ -92,13 +92,15 @@ public class showBasicColourSelector : MonoBehaviour
     }
 
 
-    public void showPanel()
+    public void showPanel(string partType)
     {
 
         GameObject window = Resources.Load<GameObject>("Prefabs/UI/screens/empty_colour_select_window");
         Sprite box_selected = Resources.Load<Sprite>("UI/textures/misc/empty_box/selected/selected");
         GameObject sender = this.gameObject;
         GameObject window_panel = Instantiate(window, canvas);
+        window_panel.GetComponent<basicColourSelectManager>().partType = partType;
+        
         window_panel.GetComponent<Image>().color = getAverageColour(colourGroup.Colours,1.25f);
         RectTransform window_panel_rect = window_panel.GetComponent<RectTransform>();
         float window_width = window_panel_rect.sizeDelta.x;
@@ -107,7 +109,7 @@ public class showBasicColourSelector : MonoBehaviour
         float padding_x = 5.0f;
         float padding_y = 5.0f;
         float offset_x = 30.0f;
-        float offset_y = 90;
+        float offset_y = 100;
         float box_size = box.GetComponent<RectTransform>().sizeDelta.x;
         float box_total_width = (box_size + padding_x);
         float box_total_height = (box_size + padding_y);
@@ -143,6 +145,11 @@ public class showBasicColourSelector : MonoBehaviour
                 buttons[i].GetComponent<Image>().sprite = box_selected;
                 buttons[i].GetComponent<boxIconManager>().Selected = true;
             }
+        }
+
+        Component[] old_buttons = transform.parent.parent.GetComponentsInChildren<Button>();
+        foreach(Button btn in old_buttons) {
+            btn.interactable = false;
         }
     }
 

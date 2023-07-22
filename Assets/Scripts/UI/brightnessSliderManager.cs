@@ -10,6 +10,7 @@ public class brightnessSliderManager : MonoBehaviour
     public GameObject preview;
     public float scale_factor;
     public float lerp_time;
+    public bool isUsingHex;
 
     IEnumerator SmoothScale(Vector3 original_scale, Vector3 new_scale,RectTransform rect)
     {
@@ -42,28 +43,29 @@ public class brightnessSliderManager : MonoBehaviour
 
     public void onValueChanged()
     {
-        Slider slider = this.gameObject.GetComponent<Slider>();
+        if (!isUsingHex){
+            Slider slider = this.gameObject.GetComponent<Slider>();
 
-        preview.GetComponent<ColourPreviewManager>().brightness = slider.value;
-        preview.GetComponent<ColourPreviewManager>().update_preview();
+            preview.GetComponent<ColourPreviewManager>().brightness = slider.value;
+            preview.GetComponent<ColourPreviewManager>().update_preview();
 
-        Color default_colour_pressed = new Color(0.3806f, 0.5020f, 0.5566f, 0.9372f);
-        Color min_pressed_colour = new Color(0, 0, 0);
-        Color max_pressed_colour = new Color(1, 1, 1);
+            Color default_colour_pressed = new Color(0.3806f, 0.5020f, 0.5566f, 0.9372f);
+            Color min_pressed_colour = new Color(0, 0, 0);
+            Color max_pressed_colour = new Color(1, 1, 1);
 
-        Color default_colour_normal = new Color(0.3906f, 0.512f, 0.5666f, 0.9372f);
-        Color min_normal_colour = new Color(0.1f, 0.1f, 0.1f);
-        Color max_normal_colour = new Color(1, 1,1);
-        
-        float new_value = slider.value;
-        Color new_slider_pressed_colour = calculateBrightness(default_colour_pressed, new_value,min_pressed_colour,max_pressed_colour);
-        Color new_slider_normal_colour = calculateBrightness(new Color(default_colour_normal.r,default_colour_normal.g,default_colour_normal.b), new_value, min_normal_colour, max_normal_colour);
-        ColorBlock slider_colours = slider.colors;
-        slider_colours.pressedColor = new_slider_pressed_colour;
-        slider_colours.normalColor = new_slider_normal_colour;
-        slider_colours.selectedColor = new_slider_normal_colour;
-        slider.colors = slider_colours;
+            Color default_colour_normal = new Color(0.3906f, 0.512f, 0.5666f, 0.9372f);
+            Color min_normal_colour = new Color(0.1f, 0.1f, 0.1f);
+            Color max_normal_colour = new Color(1, 1, 1);
 
+            float new_value = slider.value;
+            Color new_slider_pressed_colour = calculateBrightness(default_colour_pressed, new_value, min_pressed_colour, max_pressed_colour);
+            Color new_slider_normal_colour = calculateBrightness(new Color(default_colour_normal.r, default_colour_normal.g, default_colour_normal.b), new_value, min_normal_colour, max_normal_colour);
+            ColorBlock slider_colours = slider.colors;
+            slider_colours.pressedColor = new_slider_pressed_colour;
+            slider_colours.normalColor = new_slider_normal_colour;
+            slider_colours.selectedColor = new_slider_normal_colour;
+            slider.colors = slider_colours;
+        }
 
     }
 

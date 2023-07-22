@@ -30,8 +30,6 @@ public class GetColourFromPixel : MonoBehaviour, IPointerEnterHandler
                 (RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, mouse_data.position, mouse_data.pressEventCamera, out localPoint))){
                     pickerIcon.GetComponent<RectTransform>().transform.localPosition = localPoint;
                     int x = Mathf.RoundToInt(localPoint.x + rect.rect.width / 2);
-                    Debug.Log(x);
-                    //int y = Mathf.RoundToInt(localPoint.y + rect.rect.height / 2);
                     Color new_colour = img_texture.GetPixel(x, Convert.ToInt16(rainbow_dims.y/2));
                     preview.GetComponent<ColourPreviewManager>().raw_colour = new_colour;
                     preview.GetComponent<ColourPreviewManager>().update_preview();

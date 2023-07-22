@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct materialMap
+public struct MaterialMap
 {
     public List<GameObject> Eye;
     public List<GameObject> Hair;
@@ -15,5 +15,5 @@ public struct materialMap
 public class CharacterStateManager : MonoBehaviour
 {
     public string characterID;
-    public materialMap MaterialMap;
+    public MaterialMap materialMap;
 }

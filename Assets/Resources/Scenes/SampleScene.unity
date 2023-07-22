@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -223,9 +223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &52193154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +452,7 @@ GameObject:
   - component: {fileID: 162456632}
   m_Layer: 5
   m_Name: start_screen
-  m_TagString: Untagged
+  m_TagString: StartScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1472,9 +1469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &594021375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1760,9 +1754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 2800000, guid: f1f4acde7130c054da8667d5c66d557b, type: 3}
 --- !u!114 &628424883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2092,9 +2083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &723981416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2277,9 +2265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &750021830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,9 +2734,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &921333552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3018,9 +3000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &970698097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3192,15 +3171,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1103387620}
-        m_TargetAssemblyTypeName: showNewPanel, Assembly-CSharp
+        m_TargetAssemblyTypeName: showBasicColourSelector, Assembly-CSharp
         m_MethodName: showPanel
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: skin
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1103387615
@@ -3322,9 +3301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &1103387619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3639,9 +3615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &1178047205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4920,9 +4893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &1966642523
 MonoBehaviour:
   m_ObjectHideFlags: 0

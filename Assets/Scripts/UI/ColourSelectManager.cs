@@ -20,7 +20,7 @@ public class ColourSelectManager : MonoBehaviour
         switch(sender.tag)
         {
             case "SkinColourButton":
-                foreach(GameObject part in characterManager.MaterialMap.Skin)
+                foreach(GameObject part in characterManager.materialMap.Skin)
                 {
                     part.GetComponent<Renderer>().material.color = new_colour;
                 }
