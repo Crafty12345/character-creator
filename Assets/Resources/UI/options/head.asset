@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6932771c6ab75944ad4191fadb2107a, type: 3}
   m_Name: head
   m_EditorClassIdentifier: 
-  IconObjectPairList:
-  - icon: {fileID: 21300000, guid: bf732835027082e4fba3a0265ce80c99, type: 3}
+  partType: head
+  PartDataList:
+  - partIcon: {fileID: 21300000, guid: bf732835027082e4fba3a0265ce80c99, type: 3}
     GObject: {fileID: 7793995499299218220, guid: 6afb5b19b03be2e4f819240633f6e540, type: 3}
-  - icon: {fileID: 21300000, guid: 75466376e056f5747934dd1548114e8a, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}
+  - partIcon: {fileID: 21300000, guid: 75466376e056f5747934dd1548114e8a, type: 3}
     GObject: {fileID: 8170470279041573049, guid: f26359888f53c004bbda319afa42f934, type: 3}
-  - icon: {fileID: 21300000, guid: 6d4cee8ec5e84b843bd3372267dd49c6, type: 3}
-    GObject: {fileID: 5478601242347788798, guid: d2cb34d4b8a65fd41983e45886565aeb, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}

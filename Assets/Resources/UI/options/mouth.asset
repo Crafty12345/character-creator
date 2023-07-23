@@ -12,12 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6932771c6ab75944ad4191fadb2107a, type: 3}
   m_Name: mouth
   m_EditorClassIdentifier: 
-  IconObjectPairList:
-  - icon: {fileID: 21300000, guid: 123198e643fd52e44b1e3f011d2f8b7f, type: 3}
+  partType: mouth
+  PartDataList:
+  - partIcon: {fileID: 21300000, guid: 123198e643fd52e44b1e3f011d2f8b7f, type: 3}
     GObject: {fileID: 2788867362341257404, guid: 438f1684d94902f45ae76a82b49e1db7, type: 3}
-  - icon: {fileID: 21300000, guid: 48e2dccef16aae84ab9f6b59b9d0ff85, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}
+  - partIcon: {fileID: 21300000, guid: 48e2dccef16aae84ab9f6b59b9d0ff85, type: 3}
     GObject: {fileID: 6330869297175188975, guid: 04a22db46d15a96498ae3f6f8fb7903d, type: 3}
-  - icon: {fileID: 21300000, guid: c5a6e31a37fa0a84ab1c548ccba894eb, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}
+  - partIcon: {fileID: 21300000, guid: c5a6e31a37fa0a84ab1c548ccba894eb, type: 3}
     GObject: {fileID: 8611563503536937633, guid: 96cb3b30e6b812549a69d398eff4b956, type: 3}
-  - icon: {fileID: 21300000, guid: 774dd142142f88040965a5654f5a4aad, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}
+  - partIcon: {fileID: 21300000, guid: 774dd142142f88040965a5654f5a4aad, type: 3}
     GObject: {fileID: 4043669985576363511, guid: e4c14668d0fec234581364fc9c60d668, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}

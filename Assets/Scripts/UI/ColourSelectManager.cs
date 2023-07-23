@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
 public class ColourSelectManager : MonoBehaviour
 {
-
+    
     public void onClick()
     {
         GameObject sender = this.gameObject;
         GameObject gameManagerManager = GameObject.FindGameObjectWithTag("GameManager");
-        GameObject colourIcon = FindChildByTag(this.gameObject,"ColourIcon");
+        GameObject colourIcon = Utils.FindChildByTag(this.gameObject,"ColourIcon");
         Color new_colour = colourIcon.GetComponent<Image>().color;
         GameStateManager gameManager = gameManagerManager.GetComponent<GameStateManager>();
         CharacterStateManager characterManager = gameManager.characterObject.GetComponent<CharacterStateManager>();
@@ -25,20 +23,14 @@ public class ColourSelectManager : MonoBehaviour
                     part.GetComponent<Renderer>().material.color = new_colour;
                 }
                 break;
+            case "OutfitColourButton":
+                foreach (GameObject part in characterManager.materialMap.Outfit)
+                {
+                    part.GetComponent<Renderer>().material.color = new_colour;
+                }
+                break;
         }
         refreshBoxIcons(sender, new_colour);
-    }
-
-    GameObject FindChildByTag(GameObject parent, string tag)
-    {
-        foreach (Transform child_object in parent.transform)
-        {
-            if (child_object.tag == tag)
-            {
-                return child_object.gameObject;
-            }
-        }
-        return null;
     }
 
     public void refreshBoxIcons(GameObject sender,Color new_colour)
@@ -48,7 +40,7 @@ public class ColourSelectManager : MonoBehaviour
         foreach(GameObject box in all_boxes)
         {
             iconManager = box.GetComponent<boxIconManager>();
-            if (showBasicColourSelector.checkColourSimilarity(FindChildByTag(box,"ColourIcon").GetComponent<Image>().color, new_colour, 0.05f)){
+            if (showBasicColourSelector.checkColourSimilarity(Utils.FindChildByTag(box,"ColourIcon").GetComponent<Image>().color, new_colour, 0.05f)){
                 iconManager.Selected = true;
 
             }

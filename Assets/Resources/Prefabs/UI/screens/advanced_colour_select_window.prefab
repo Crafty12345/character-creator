@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 2078905674980754344}
   - component: {fileID: 4481923897358514728}
   - component: {fileID: 3453059442303865149}
+  - component: {fileID: 6590542100007155863}
   m_Layer: 5
   m_Name: ok_button
   m_TagString: Untagged
@@ -290,7 +291,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2757127146982706569}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6590542100007155863}
+        m_TargetAssemblyTypeName: SaveAndCloseWindow, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4481923897358514728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +361,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &6590542100007155863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387978071728804686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff823615880e7459c018fc8d284059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6426587527537211770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,6 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc710bd13aafff4a854ac28f3831d5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partType: 
   old_colour: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6426587529442194280
 GameObject:
@@ -1990,3 +2016,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   old_colour: {r: 0, g: 0, b: 0, a: 0}
+  partType: 

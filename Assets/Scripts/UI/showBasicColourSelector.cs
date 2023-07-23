@@ -99,7 +99,7 @@ public class showBasicColourSelector : MonoBehaviour
         Sprite box_selected = Resources.Load<Sprite>("UI/textures/misc/empty_box/selected/selected");
         GameObject sender = this.gameObject;
         GameObject window_panel = Instantiate(window, canvas);
-        window_panel.GetComponent<basicColourSelectManager>().partType = partType;
+        window_panel.GetComponent<BasicColourSelectManager>().partType = partType;
         
         window_panel.GetComponent<Image>().color = getAverageColour(colourGroup.Colours,1.25f);
         RectTransform window_panel_rect = window_panel.GetComponent<RectTransform>();
@@ -128,7 +128,8 @@ public class showBasicColourSelector : MonoBehaviour
                 int i = (c + ((r) * max_cols)) + 1;
 
                 GameObject new_box = Instantiate(box, window_panel.transform);
-                new_box.tag = "SkinColourButton";
+                string new_box_tag = Utils.CapitaliseFirstLetter(partType) + "ColourButton";
+                new_box.tag = new_box_tag;
 
                 Vector2 window_panel_position = window_panel_rect.anchoredPosition;
                 Vector2 new_box_pos = new Vector2(((window_panel_position.x + offset_x) + (c * (box_total_width))), ((window_height / 2) - (offset_y + ((padding_y + box_total_height) * r))));

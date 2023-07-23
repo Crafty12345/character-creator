@@ -5,5 +5,6 @@ using UnityEngine;
 public class AdvancedColourSelectManager : MonoBehaviour
 {
     public string partType;
+    public Color old_colour;
 
 }

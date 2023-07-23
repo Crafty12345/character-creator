@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6932771c6ab75944ad4191fadb2107a, type: 3}
   m_Name: eyebrows
   m_EditorClassIdentifier: 
-  IconObjectPairList:
-  - icon: {fileID: 21300000, guid: 74be5c0eb8ee8034aa6ad4746e72fe23, type: 3}
+  partType: eyebrows
+  PartDataList:
+  - partIcon: {fileID: 21300000, guid: 74be5c0eb8ee8034aa6ad4746e72fe23, type: 3}
     GObject: {fileID: 2249942983964149303, guid: db08a0d89275b234ba44d5af490ff1e0, type: 3}
-  - icon: {fileID: 21300000, guid: cce2cc10c349f5c4fac54b0d9927addb, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}
+  - partIcon: {fileID: 21300000, guid: cce2cc10c349f5c4fac54b0d9927addb, type: 3}
     GObject: {fileID: 377368376983982492, guid: 195d4f5ff8f55d2488728dc827a81c11, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}

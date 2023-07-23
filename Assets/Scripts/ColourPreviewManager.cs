@@ -17,7 +17,7 @@ public class ColourPreviewManager : MonoBehaviour
         brightness = 0.5f;
         active_colour = brightnessManager.calculateBrightness(raw_colour, brightness, new Color(0, 0, 0), new Color(1, 1, 1));
         active_colour.a = 1;
-        partType = gameObject.transform.parent.parent.GetComponent<basicColourSelectManager>().partType;
+        partType = gameObject.transform.parent.parent.GetComponent<BasicColourSelectManager>().partType;
     }
 
     public void update_preview()

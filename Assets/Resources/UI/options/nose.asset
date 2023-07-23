@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6932771c6ab75944ad4191fadb2107a, type: 3}
   m_Name: nose
   m_EditorClassIdentifier: 
-  IconObjectPairList:
-  - icon: {fileID: 21300000, guid: 5ccf7e0743a067f4baa963621e597244, type: 3}
-    GObject: {fileID: 0}
+  partType: nose
+  PartDataList:
+  - partIcon: {fileID: 21300000, guid: 5ccf7e0743a067f4baa963621e597244, type: 3}
+    GObject: {fileID: 1189557800580910420, guid: c51d57959a3449c4ea02a6a8c736b3cc, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}
+  - partIcon: {fileID: 21300000, guid: 7ddc5ac78fc47fb4c97ae5c5b4f90380, type: 3}
+    GObject: {fileID: 1135198284895466261, guid: e4fad9ba70413f94aa88f95ab3d487be, type: 3}
+    hairOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0, y: 0, z: 0}
+    faceOffset: {x: 0, y: 0, z: 0}

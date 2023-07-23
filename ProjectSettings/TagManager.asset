@@ -8,6 +8,7 @@ TagManager:
   - SkinColourButton
   - ColourIcon
   - StartScreen
+  - OutfitColourButton
   layers:
   - Default
   - TransparentFX
