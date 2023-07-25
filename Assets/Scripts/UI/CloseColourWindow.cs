@@ -9,7 +9,7 @@ public class CloseColourWindow: MonoBehaviour
 
     private GameObject sender;
     private GameObject gameManagerManager;
-    public string partType;
+    public string materialType;
     private GameStateManager gameManager;
     private CharacterStateManager characterManager;
 
@@ -19,12 +19,12 @@ public class CloseColourWindow: MonoBehaviour
         if(transform.parent.gameObject.TryGetComponent<BasicColourSelectManager>(out BasicColourSelectManager colSelect))
         {
             old_colour = colSelect.old_colour;
-            partType = colSelect.partType;
+            materialType = colSelect.materialType;
         }
         else if (transform.parent.gameObject.TryGetComponent<AdvancedColourSelectManager>(out AdvancedColourSelectManager advColSelect))
         {
             old_colour = advColSelect.old_colour;
-            partType = advColSelect.partType;
+            materialType = advColSelect.materialType;
         }
 
         sender = this.gameObject;
@@ -52,7 +52,7 @@ public class CloseColourWindow: MonoBehaviour
 
         }
 
-        switch (partType)
+        switch (materialType)
         {
             case "skin":
                 foreach (GameObject part in characterManager.materialMap.Skin)

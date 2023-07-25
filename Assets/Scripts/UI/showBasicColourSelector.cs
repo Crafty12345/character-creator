@@ -71,6 +71,7 @@ public class showBasicColourSelector : MonoBehaviour
     public GameObject box;
     public Transform canvas;
     public Material current_colour_material;
+    public bool parentToWindow;
 
     public Color getAverageColour(List<Color> colours, float brightness)
     {
@@ -92,28 +93,47 @@ public class showBasicColourSelector : MonoBehaviour
     }
 
 
-    public void showPanel(string partType)
+    public void showPanel(string materialType)
     {
 
         GameObject window = Resources.Load<GameObject>("Prefabs/UI/screens/empty_colour_select_window");
         Sprite box_selected = Resources.Load<Sprite>("UI/textures/misc/empty_box/selected/selected");
         GameObject sender = this.gameObject;
-        GameObject window_panel = Instantiate(window, canvas);
-        window_panel.GetComponent<BasicColourSelectManager>().partType = partType;
-        
-        window_panel.GetComponent<Image>().color = getAverageColour(colourGroup.Colours,1.25f);
+
+        Transform parent;
+
+        if (parentToWindow)
+        {
+            parent = transform.parent;
+        }
+        else
+        {
+            parent = canvas;
+        }
+
+
+
+        GameObject window_panel = Instantiate(window, parent);
+        if (parentToWindow)
+        {
+            window_panel.GetComponent<RectTransform>().localPosition = new Vector2(0, 0);
+        }
+
+        window_panel.GetComponent<BasicColourSelectManager>().materialType = materialType;
+
+        window_panel.GetComponent<Image>().color = getAverageColour(colourGroup.Colours, 1.25f);
         RectTransform window_panel_rect = window_panel.GetComponent<RectTransform>();
         float window_width = window_panel_rect.sizeDelta.x;
         float window_height = window_panel_rect.sizeDelta.y;
 
         float padding_x = 5.0f;
         float padding_y = 5.0f;
-        float offset_x = 30.0f;
-        float offset_y = 100;
+        float offset_x = parentToWindow ? -165.0f : 30.0f;
+        float offset_y = 100.0f;
         float box_size = box.GetComponent<RectTransform>().sizeDelta.x;
-        float box_total_width = (box_size + padding_x);
+        float box_total_width = (box_size + (padding_x));
         float box_total_height = (box_size + padding_y);
-        int max_cols = (int)Math.Ceiling((decimal)((window_width + window_panel_rect.anchoredPosition.x) / box_total_width)) + 1;
+        int max_cols = (int)Math.Ceiling((decimal)((window_width + window_panel_rect.anchoredPosition.x-Math.Abs(offset_x)) / box_total_width)) + 1;
         int max_rows = (int)Math.Ceiling((decimal)(Convert.ToDecimal(colourGroup.Colours.Count) / Convert.ToDecimal(max_cols)));
         List<int> rows = Enumerable.Repeat(max_cols, max_rows).ToList();
         string dbgString = $"{max_cols}, {max_rows}, {colourGroup.Colours.Count}";
@@ -128,10 +148,10 @@ public class showBasicColourSelector : MonoBehaviour
                 int i = (c + ((r) * max_cols)) + 1;
 
                 GameObject new_box = Instantiate(box, window_panel.transform);
-                string new_box_tag = Utils.CapitaliseFirstLetter(partType) + "ColourButton";
+                string new_box_tag = Utils.CapitaliseFirstLetter(materialType) + "ColourButton";
                 new_box.tag = new_box_tag;
 
-                Vector2 window_panel_position = window_panel_rect.anchoredPosition;
+                Vector2 window_panel_position = window_panel_rect.localPosition;
                 Vector2 new_box_pos = new Vector2(((window_panel_position.x + offset_x) + (c * (box_total_width))), ((window_height / 2) - (offset_y + ((padding_y + box_total_height) * r))));
                 new_box.GetComponent<RectTransform>().anchoredPosition = new_box_pos;
                 buttons.Add(new_box);
@@ -140,6 +160,7 @@ public class showBasicColourSelector : MonoBehaviour
         }
         for (int i = 0; i < button_icons.Count; i++)
         {
+            buttons[i].GetComponent<BoxDataManager>().boxID = i;
             button_icons[i].GetComponent<Image>().color = colourGroup.Colours[i];
             if (checkColourSimilarity(colourGroup.Colours[i], current_colour_material.color, 0.05f))
             {
@@ -148,10 +169,14 @@ public class showBasicColourSelector : MonoBehaviour
             }
         }
 
-        Component[] old_buttons = transform.parent.parent.GetComponentsInChildren<Button>();
-        foreach(Button btn in old_buttons) {
-            btn.interactable = false;
+        foreach (Transform child in transform.parent.parent)
+        {
+            if(child.TryGetComponent<Button>(out Button button))
+            {
+                button.interactable = false;
+            }
         }
+
     }
 
 }

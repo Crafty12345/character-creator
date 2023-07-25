@@ -19,13 +19,13 @@ MonoBehaviour:
     partOffset: {x: 0, y: 0.72, z: 0.26}
   - partIcon: {fileID: 21300000, guid: ac5964a3d7c6a5147beb5b2d7fc4e880, type: 3}
     GObject: {fileID: 919132149155446097, guid: 3fa0958dad7f5af408aa720cd87c43b0, type: 3}
-    partOffset: {x: 0.042, y: 1.036, z: 0.414}
+    partOffset: {x: 0.04, y: 0.25, z: 0.39}
   - partIcon: {fileID: 21300000, guid: 2e536c7f48472054fbd4b2484e2bbe06, type: 3}
     GObject: {fileID: 919132149155446097, guid: be572a1b2ecd551428877a4a6bfab00d, type: 3}
-    partOffset: {x: 0, y: 0, z: 0}
+    partOffset: {x: 0.04, y: 0.35, z: 0.392}
   - partIcon: {fileID: 21300000, guid: 25a6c20238d40104280e0fba52015349, type: 3}
     GObject: {fileID: 919132149155446097, guid: 8579b8e9402498a42af7a7a93e4fad2c, type: 3}
     partOffset: {x: 0, y: -0.22, z: 0.04}
   - partIcon: {fileID: 21300000, guid: ff7440f6ccb108e4eab55fcda44868ef, type: 3}
-    GObject: {fileID: 919132149155446097, guid: 34f392784820c36448168191db739428, type: 3}
+    GObject: {fileID: 6653404344611561523, guid: 9a83b19b5ea3fab4fbb7a761b43e7fbf, type: 3}
     partOffset: {x: 0, y: 0, z: 0}

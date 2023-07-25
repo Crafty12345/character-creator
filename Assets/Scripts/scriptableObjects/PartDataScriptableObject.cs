@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class _PartData
+public class PartDataData
 {
     public Sprite partIcon;
     public GameObject GObject;
@@ -17,6 +17,17 @@ public class _PartData
 public class PartDataScriptableObject : ScriptableObject
 {
     public string partType;
-    public List<_PartData> PartDataList;
+    public List<PartDataData> PartDataList;
+
+    public List<Sprite> GetSprites()
+    {
+        List<Sprite> list = new List<Sprite>();
+
+        foreach(PartDataData part in PartDataList)
+        {
+            list.Add(part.partIcon);
+        }
+        return list;
+    }
 
 }

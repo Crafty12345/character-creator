@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AdvancedColourSelectManager : MonoBehaviour
 {
-    public string partType;
+    public string materialType;
     public Color old_colour;
 
 }

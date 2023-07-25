@@ -10,10 +10,10 @@ public class showAdvancedColourSelect : MonoBehaviour
     {
         GameObject new_panel = Resources.Load<GameObject>("Prefabs/UI/screens/advanced_colour_select_window");
         new_panel = GameObject.Instantiate(new_panel,this.gameObject.transform.parent);
-        string partType = transform.parent.gameObject.GetComponent<BasicColourSelectManager>().partType;
-        new_panel.GetComponent<AdvancedColourSelectManager>().partType = partType;
+        string materialType = transform.parent.gameObject.GetComponent<BasicColourSelectManager>().materialType;
+        new_panel.GetComponent<AdvancedColourSelectManager>().materialType = materialType;
         GameObject player = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameStateManager>().characterObject;
-        switch (partType)
+        switch (materialType)
         {
             case "skin":
                 {

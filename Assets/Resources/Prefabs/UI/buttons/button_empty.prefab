@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7728847124512054171}
   - component: {fileID: 7728847124512054172}
   - component: {fileID: 7728847124512054173}
+  - component: {fileID: 4531315864940581772}
   m_Layer: 5
   m_Name: button_empty
   m_TagString: Untagged
@@ -218,9 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &7728847124512054173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,8 +231,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0eb0ae682efa114e9b463a925bac430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  box_no_underline: {fileID: 21300000, guid: ec9ee5ceda5d959449cade4b949e3c07, type: 3}
-  box_underline: {fileID: 21300000, guid: 6879ceae4f98cb640bbc0a11c822c445, type: 3}
+  Selected: 0
+--- !u!114 &4531315864940581772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728847124512054144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0008c0fc9ef7db1419371d5e2658ae14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxID: 
 --- !u!1 &7728847125009503930
 GameObject:
   m_ObjectHideFlags: 0

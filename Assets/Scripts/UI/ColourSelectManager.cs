@@ -18,16 +18,13 @@ public class ColourSelectManager : MonoBehaviour
         switch(sender.tag)
         {
             case "SkinColourButton":
-                foreach(GameObject part in characterManager.materialMap.Skin)
-                {
-                    part.GetComponent<Renderer>().material.color = new_colour;
-                }
+                characterManager.skinMaterial.color = new_colour;
                 break;
             case "OutfitColourButton":
-                foreach (GameObject part in characterManager.materialMap.Outfit)
-                {
-                    part.GetComponent<Renderer>().material.color = new_colour;
-                }
+                characterManager.outfitMaterial.color = new_colour;
+                break;
+            case "HairColourButton":
+                characterManager.hairMaterial.color = new_colour;
                 break;
         }
         refreshBoxIcons(sender, new_colour);

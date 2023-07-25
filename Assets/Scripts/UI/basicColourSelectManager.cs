@@ -5,7 +5,7 @@ using UnityEngine;
 public class BasicColourSelectManager : MonoBehaviour
 {
 
-    public string partType;
+    public string materialType;
     public Color old_colour;
 
     private void Start()
@@ -13,30 +13,35 @@ public class BasicColourSelectManager : MonoBehaviour
 
         try
         {
-            partType = transform.parent.GetComponent<BasicColourSelectManager>().partType;
+            materialType = transform.parent.GetComponent<BasicColourSelectManager>().materialType;
         }
         catch (System.Exception e)
         {
             if (e.GetType().ToString() == "NullReferenceException")
             {
-                partType = transform.parent.GetComponent<AdvancedColourSelectManager>().partType;
+                materialType = transform.parent.GetComponent<AdvancedColourSelectManager>().materialType;
             }
         }
 
         GameObject player = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameStateManager>().characterObject;
-        switch (partType)
+        CharacterStateManager characterState = player.GetComponent<CharacterStateManager>();
+        switch (materialType)
         {
             case "skin":
                 {
 
-                    old_colour = player.GetComponent<CharacterStateManager>().materialMap.Skin[0].GetComponent<Renderer>().material.color;
+                    old_colour = characterState.skinMaterial.color;
                     break;
                 }
             case "outfit":
                 {
-                    old_colour = player.GetComponent<CharacterStateManager>().materialMap.Outfit[0].GetComponent<Renderer>().material.color;
+                    old_colour = characterState.outfitMaterial.color;
                     break;
                 }
+            case "hair":
+                old_colour = characterState.hairMaterial.color;
+                break;
+
         }
 
     }

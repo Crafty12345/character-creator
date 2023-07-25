@@ -12,6 +12,54 @@ public class Startup : MonoBehaviour
 
     public string selected_character_id;
 
+    
+    void SetCharacterMaterials(GameObject new_character, materialJSONData[] default_materials)
+    {
+        foreach (materialJSONData material in default_materials)
+        {
+            Material part_material = material.toMaterial();
+            switch (material.name)
+            {
+                case "default_hair_colour":
+                    new_character.GetComponent<CharacterStateManager>().hairMaterial = part_material;
+                    foreach (GameObject part in new_character.GetComponent<CharacterStateManager>().materialMap.Hair)
+                    {
+                        part.GetComponent<MeshRenderer>().material = new_character.GetComponent<CharacterStateManager>().hairMaterial;
+                    }
+                    break;
+                case "default_skin_colour":
+                    new_character.GetComponent<CharacterStateManager>().skinMaterial = part_material;
+                    foreach (GameObject part in new_character.GetComponent<CharacterStateManager>().materialMap.Skin)
+                    {
+                        part.GetComponent<MeshRenderer>().material = new_character.GetComponent<CharacterStateManager>().skinMaterial;
+                    }
+                    break;
+                case "default_outfit_colour":
+                    new_character.GetComponent<CharacterStateManager>().outfitMaterial = part_material;
+                    foreach (GameObject part in new_character.GetComponent<CharacterStateManager>().materialMap.Outfit)
+                    {
+                        part.GetComponent<MeshRenderer>().material = new_character.GetComponent<CharacterStateManager>().outfitMaterial;
+                    }
+                    break;
+                case "default_eye_colour":
+                    new_character.GetComponent<CharacterStateManager>().eyeMaterial = part_material;
+                    foreach (GameObject part in new_character.GetComponent<CharacterStateManager>().materialMap.Eye)
+                    {
+                        part.GetComponent<MeshRenderer>().material = new_character.GetComponent<CharacterStateManager>().eyeMaterial;
+                    }
+                    break;
+                case "default_eyebrow_colour":
+                    new_character.GetComponent<CharacterStateManager>().eyebrowMaterial = part_material;
+                    foreach (GameObject part in new_character.GetComponent<CharacterStateManager>().materialMap.Eyebrow)
+                    {
+                        part.GetComponent<MeshRenderer>().material = new_character.GetComponent<CharacterStateManager>().eyebrowMaterial;
+                    }
+                    break;
+            }
+
+        }
+    }
+
     void Awake()
     {
         string streaming_assets_path = Application.streamingAssetsPath;
@@ -36,6 +84,7 @@ public class Startup : MonoBehaviour
 
         foreach (materialJSONData material in default_materials)
         {
+
             string new_materials_path = player_materials_dir + "/" +  material.name.Replace("default_", "") + ".json";
             FileManager.WriteBinary(material.toJson(),new_materials_path);
 
@@ -46,11 +95,12 @@ public class Startup : MonoBehaviour
         GameObject new_character = GameObject.Instantiate(characterPrefab);
         new_character.GetComponent<CharacterStateManager>().characterID = dirName;
 
+        SetCharacterMaterials(new_character, default_materials);
+
         GameStateManager gameState = this.gameObject.GetComponent<GameStateManager>();
         gameState.characterID = dirName;
         gameState.characterObject = new_character;
         
-
     }
 
 }

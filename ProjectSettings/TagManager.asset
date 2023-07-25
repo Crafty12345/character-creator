@@ -9,6 +9,8 @@ TagManager:
   - ColourIcon
   - StartScreen
   - OutfitColourButton
+  - HairPartButton
+  - HairColourButton
   layers:
   - Default
   - TransparentFX

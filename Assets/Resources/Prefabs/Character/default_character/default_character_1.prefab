@@ -1132,8 +1132,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3887785582526354213}
   m_LocalRotation: {x: 0, y: 0.13294835, z: 0, w: 0.99112296}
-  m_LocalPosition: {x: 4.75, y: 1, z: -9.31}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 4.75, y: -0.61, z: -9.31}
+  m_LocalScale: {x: 2.01705, y: 2.01705, z: 2.01705}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4523585872016592534}
@@ -1206,6 +1206,15 @@ MonoBehaviour:
     - {fileID: 1101967821063525328}
     - {fileID: 675907700004217716}
     - {fileID: 4829614682398918309}
+  partObject:
+    HairObject: {fileID: 4018766996124527627}
+    HeadObject: {fileID: 7599362211035437933}
+    LeftEyebrowObject: {fileID: 4645829742603506750}
+    RightEyebrowObject: {fileID: 8781816055324836542}
+    MouthObject: {fileID: 5273566144458200176}
+    LeftEyeObject: {fileID: 505258159316236716}
+    RightEyeObject: {fileID: 4510027437681624254}
+    NoseObject: {fileID: 4437536813914447166}
 --- !u!1 &4018766996124527627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9063416321100612454}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.00071, z: 0.00052}
+  m_LocalPosition: {x: 0.00001, y: 0.00071, z: 0.00066}
   m_LocalScale: {x: 0.37733918, y: 0.37733918, z: 0.37740627}
   m_ConstrainProportionsScale: 0
   m_Children:

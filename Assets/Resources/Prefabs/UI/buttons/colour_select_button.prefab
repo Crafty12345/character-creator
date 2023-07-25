@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7728847124512054172}
   - component: {fileID: 7728847124512054173}
   - component: {fileID: -2374774468973448862}
+  - component: {fileID: 5689689805880081607}
   m_Layer: 5
   m_Name: colour_select_button
   m_TagString: Untagged
@@ -219,9 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36aa7928318f2e4b8ac604cec5c6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handIcon: {fileID: 2800000, guid: fdbbc0bc58cfcb040a524a2fd0f57ce5, type: 3}
-  pointerIcon: {fileID: 2800000, guid: d0cafe1079f943a4ba65ea1047c1b640, type: 3}
-  iBeamIcon: {fileID: 0}
 --- !u!114 &7728847124512054173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +245,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b9969d9c4029bd4d91d29fbf95ccbdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5689689805880081607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728847124512054144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0008c0fc9ef7db1419371d5e2658ae14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxID: 
 --- !u!1 &7728847125009503930
 GameObject:
   m_ObjectHideFlags: 0
